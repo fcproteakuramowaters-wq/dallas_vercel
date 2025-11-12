@@ -75,3 +75,31 @@ a[href*="next.svg"],
   visibility: hidden !important;
   pointer-events: none !important;
 }
+
+/* Image slide animations for FacilitySlider */
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-24px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(24px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slide-in-down {
+  from { opacity: 0; transform: translateY(-18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slide-in-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.anim-left { animation: slide-in-left 700ms cubic-bezier(.2,.8,.2,1); }
+.anim-right { animation: slide-in-right 700ms cubic-bezier(.2,.8,.2,1); }
+.anim-down { animation: slide-in-down 700ms cubic-bezier(.2,.8,.2,1); }
+.anim-up { animation: slide-in-up 700ms cubic-bezier(.2,.8,.2,1); }
+.anim-fade { animation: fade-in 700ms ease-in-out; }

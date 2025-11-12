@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface FacilitySliderProps {
   images: string[];
@@ -18,6 +18,8 @@ export default function FacilitySlider({
 }: FacilitySliderProps) {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [animTrigger, setAnimTrigger] = useState(false);
 
   const openLightbox = (index: number) => {
     setLightboxIndex(index);
@@ -36,12 +38,67 @@ export default function FacilitySlider({
     setLightboxIndex((prev) => (prev - 1 + images.length) % images.length);
   };
 
+  // Determine interval and animation by facility title
+  const getIntervalSeconds = (title: string) => {
+    const map: Record<string, number> = {
+      casino: 5,
+      'event-center': 7,
+      gym: 4,
+      'night-club': 6,
+      'pool-bar': 6,
+      'sports-bar': 5,
+      'wine-bar': 8,
+    };
+    const key = title.toLowerCase().replace(/\s+/g, '-');
+    const v = map[key] ?? 5;
+    return Math.min(8, Math.max(4, v));
+  };
+
+  const getAnimClass = (title: string) => {
+    const map: Record<string, string> = {
+      casino: 'anim-left',
+      'event-center': 'anim-right',
+      gym: 'anim-down',
+      'night-club': 'anim-up',
+      'pool-bar': 'anim-fade',
+      'sports-bar': 'anim-left',
+      'wine-bar': 'anim-right',
+    };
+    const key = title.toLowerCase().replace(/\s+/g, '-');
+    return map[key] ?? 'anim-fade';
+  };
+
+  // Auto-advance main image using facility-specific interval. Pause while lightbox open.
+  useEffect(() => {
+    if (images.length <= 1) return;
+    if (isLightboxOpen) return; // pause when lightbox open
+
+    const seconds = getIntervalSeconds(title);
+    const ms = seconds * 1000;
+
+    const id = setInterval(() => {
+      setCurrentImageIndex((prev) => {
+        const next = (prev + 1) % images.length;
+        setAnimTrigger(true);
+        // reset trigger after animation duration (~700ms)
+        setTimeout(() => setAnimTrigger(false), 800);
+        return next;
+      });
+    }, ms);
+
+    return () => clearInterval(id);
+  }, [images.length, isLightboxOpen, title]);
+
+  const animClass = getAnimClass(title);
+
   const imageSection = (
     <div className="w-full md:w-2/5 relative mb-6 md:mb-0">
-      <div className="relative overflow-hidden rounded-3xl shadow-lg cursor-pointer hover:opacity-80 transition-opacity"
-        onClick={() => openLightbox(0)}>
+      <div
+        className={`relative overflow-hidden rounded-3xl shadow-lg cursor-pointer hover:opacity-80 transition-opacity ${animTrigger ? animClass : ''}`}
+        onClick={() => openLightbox(currentImageIndex)}
+      >
         <Image
-          src={images[0]}
+          src={images[currentImageIndex]}
           alt={title}
           width={500}
           height={400}

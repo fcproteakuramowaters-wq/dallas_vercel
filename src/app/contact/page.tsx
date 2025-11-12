@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ContactForm from '@/components/ContactForm';
 
 export const metadata = {
   title: 'Contact & Support - Dallas Grand Beach Hotel',
@@ -51,43 +52,7 @@ export default function ContactPage() {
 
             <div className="md:w-3/5 p-8">
               <h2 className="text-2xl font-semibold text-gray-800 mb-6">Send Us a Message</h2>
-
-              <form className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                  <input type="text" id="name" name="name" placeholder="Your full name" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                  <input type="email" id="email" name="email" placeholder="your.email@example.com" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required />
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                  <input type="tel" id="phone" name="phone" placeholder="+234 (803) 567-8904" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">Subject</label>
-                  <select id="subject" name="subject" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                    <option value="">Select a subject</option>
-                    <option value="reservation">Reservation Inquiry</option>
-                    <option value="feedback">Feedback</option>
-                    <option value="complaints">Complaints</option>
-                    <option value="events">Events & Groups</option>
-                    <option value="partnership">Partnership</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                  <textarea id="message" name="message" rows={5} placeholder="Please share your message or inquiry..." className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
-                </div>
-
-                <button type="submit" className="w-full bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-semibold px-6 py-3 rounded-lg shadow-lg transition-colors">Send Message</button>
-              </form>
+              <ContactForm />
             </div>
 
           </div>

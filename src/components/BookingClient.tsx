@@ -1,6 +1,6 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import { useState, useMemo } from "react";
 import Image from 'next/image';
 import { getRoomById } from '@/lib/rooms';
@@ -15,6 +15,7 @@ function daysBetween(a?: string, b?: string) {
 
 export default function BookingClient() {
   const params = useSearchParams();
+  const router = useRouter();
   const roomId = params?.get('room') || undefined;
   const room = useMemo(() => getRoomById(roomId), [roomId]);
 
@@ -66,15 +67,9 @@ export default function BookingClient() {
       }
 
       setMessage('✓ Booking confirmed! Check your email for details.');
-      // Optionally reset form or redirect after a delay
+      // Redirect to home page after 2 seconds
       setTimeout(() => {
-        setFullName('');
-        setEmail('');
-        setPhone('');
-        setCheckin('');
-        setCheckout('');
-        setStep(1);
-        setMessage('');
+        router.push('/');
       }, 2000);
     } catch (error) {
       setMessage(`Error: ${error instanceof Error ? error.message : 'Unknown error'}`);
