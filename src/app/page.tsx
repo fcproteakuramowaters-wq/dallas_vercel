@@ -1,65 +1,107 @@
-import Image from "next/image";
+import Header from '@/components/Header';
+import Hero from '@/components/Hero';
+import Footer from '@/components/Footer';
+import FacilitySlider from '@/components/FacilitySlider';
 
 export default function Home() {
+  const facilities = [
+    {
+      id: 'casino',
+      title: 'Casino',
+      description: 'Experience the ultimate thrill of gaming at our luxury beachfront resort casino. Enjoy an exclusive mix of classic and modern games — including roulette, blackjack, and slot machines — all in a stylish, world-class setting. Designed for relaxation and entertainment, our casino offers guests the perfect balance of excitement, elegance, and leisure by the beach.',
+      images: ['/facilities/casino/1.jpg', '/facilities/casino/2.jpg'],
+      isImageLeft: true,
+    },
+    {
+      id: 'event-center',
+      title: 'Event Center',
+      description: 'Celebrate life\'s most important moments in our elegant and spacious event center — ideal for weddings, conferences, banquets, and private celebrations. Designed with modern facilities, premium décor, and flexible seating options, our venue ensures every occasion is seamless, stylish, and unforgettable.',
+      images: ['/facilities/event-center/1.jpg', '/facilities/event-center/2.jpg'],
+      isImageLeft: false,
+    },
+    {
+      id: 'gym',
+      title: 'Gym',
+      description: 'Maintain your fitness routine in our fully equipped gym, featuring modern cardio machines, free weights, and strength-training equipment. Designed for comfort and performance, our fitness center lets you energize your day and stay active throughout your stay.',
+      images: ['/facilities/gym/1.jpg'],
+      isImageLeft: true,
+    },
+    {
+      id: 'night-club',
+      title: 'Night Club',
+      description: 'Dance the night away in our vibrant nightclub, where top DJs, live performances, and an electrifying atmosphere come together for unforgettable nights. Enjoy premium drinks, great company, and non-stop entertainment in a stylish, modern setting designed for pure excitement.',
+      images: ['/facilities/night-club/1.jpg', '/facilities/night-club/2.jpg'],
+      isImageLeft: false,
+    },
+    {
+      id: 'pool-bar',
+      title: 'Pool Bar',
+      description: 'Relax and unwind at our stylish pool bar, where refreshing cocktails, light bites, and a sparkling poolside view create the perfect atmosphere for leisure and relaxation. Enjoy tropical drinks, soothing music, and the warm ambiance of a true resort experience.',
+      images: [
+        '/facilities/pool-bar/1.jpg',
+        '/facilities/pool-bar/2.jpg',
+        '/facilities/pool-bar/3.jpg',
+        '/facilities/pool-bar/4.jpg',
+        '/facilities/pool-bar/5.jpg',
+        '/facilities/pool-bar/6.jpg',
+        '/facilities/pool-bar/7.jpg',
+        '/facilities/pool-bar/8.jpg',
+        '/facilities/pool-bar/9.jpg',
+        '/facilities/pool-bar/10.jpg',
+        '/facilities/pool-bar/11.jpg',
+        '/facilities/pool-bar/12.jpg',
+        '/facilities/pool-bar/13.jpg',
+        '/facilities/pool-bar/14.jpg',
+        '/facilities/pool-bar/15.jpg',
+        '/facilities/pool-bar/16.jpg',
+        '/facilities/pool-bar/17.jpg',
+        '/facilities/pool-bar/18.jpg',
+      ],
+      isImageLeft: true,
+    },
+    {
+      id: 'sports-bar',
+      title: 'Sports Bar',
+      description: 'Catch every major sporting event at our lively sports bar, featuring multiple big-screen TVs, an energetic atmosphere, and a great selection of drinks and snacks. It\'s the perfect place to cheer for your favorite team and enjoy good company.',
+      images: [
+        '/facilities/sports-bar/1.jpg',
+        '/facilities/sports-bar/2.jpg',
+        '/facilities/sports-bar/3.jpg',
+        '/facilities/sports-bar/4.jpg',
+      ],
+      isImageLeft: false,
+    },
+    {
+      id: 'wine-bar',
+      title: 'Wine Bar',
+      description: 'Savor an exceptional selection of fine wines and premium spirits in our sophisticated wine bar. Enjoy a relaxed and elegant ambiance, perfect for intimate conversations, business meetings, or unwinding after a long day.',
+      images: ['/facilities/wine-bar/1.jpg', '/facilities/wine-bar/2.jpg'],
+      isImageLeft: true,
+    },
+  ];
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <Hero />
+      <main className="flex-grow">
+        {/* Our Facilities Section */}
+        <div className="w-full py-16 bg-white">
+          <h2 className="text-3xl font-bold text-center mb-12">Our Facilities</h2>
+          <div className="mx-auto w-4/5">
+            {facilities.map((facility) => (
+              <FacilitySlider
+                key={facility.id}
+                title={facility.title}
+                description={facility.description}
+                images={facility.images}
+                isImageLeft={facility.isImageLeft}
+              />
+            ))}
+          </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

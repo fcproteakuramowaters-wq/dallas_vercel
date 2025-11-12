@@ -24,3 +24,54 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Hide Next.js DevTools badge */
+[data-next-badge] {
+  display: none !important;
+}
+
+/* Hide Next.js/Turbopack icon */
+[data-nextjs-icon] {
+  display: none !important;
+}
+
+/* Hide any SVG/path with the `paused` class (removes the paused icon globally) */
+.paused {
+  display: none !important;
+}
+
+/* Hide any images or links that reference the bundled next.svg asset (remove next-logo buttons) */
+img[src$="/next.svg"],
+a[href$="/next.svg"],
+img[src*="next.svg"],
+a[href*="next.svg"],
+.next-logo,
+.next-logo-button {
+  display: none !important;
+}
+
+/* Hide common Next.js dev overlay / turbopack toolbar elements (development only)
+   These selectors target common class/attribute names used by Next devtools/turbopack.
+   This keeps the UI clean during development while avoiding edits to Next internals.
+*/
+[data-nextjs],
+[data-nextjs-root],
+[data-nextjs-overlay],
+[data-nextjs-toolbar],
+[data-nextjs-icon],
+.next-devtools,
+.next-dev,
+.nextjs-toolbar,
+.next-toolbar,
+.nextjs,
+.next-icon,
+#next-devtools,
+[id*="nextjs"],
+[id*="next-dev"],
+[id*="next-tool"],
+.turbo-devtools,
+.turbopack-devtools {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
