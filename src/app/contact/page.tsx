@@ -30,17 +30,17 @@ export default function ContactPage() {
 
               <div className="mb-6">
                 <h3 className="text-lg font-semibold mb-2">Phone</h3>
-                <p className="text-green-100"><a href="tel:+1234567890" className="hover:text-white transition-colors">+1 (234) 567-890</a><br/><span className="text-sm">Available 24/7</span></p>
+                <p className="text-green-100"><a href="tel:+1234567890" className="hover:text-white transition-colors">+234 907 455 4875</a><br/><span className="text-sm">Available 24/7</span></p>
               </div>
 
               <div className="mb-6">
                 <h3 className="text-lg font-semibold mb-2">Email</h3>
-                <p className="text-green-100"><a href="mailto:info@dallasgrandbeach.com" className="hover:text-white transition-colors">info@dallasgrandbeach.com</a><br/><a href="mailto:support@dallasgrandbeach.com" className="hover:text-white transition-colors">support@dallasgrandbeach.com</a></p>
+                <p className="text-green-100"><a href="mailto:info@dallasgrandbeachhotel.com" className="hover:text-white transition-colors">info@dallasgrandbeachhotel.com</a><br/><a href="mailto:support@dallasgrandbeachhotel.com" className="hover:text-white transition-colors">support@dallasgrandbeachhotel.com</a></p>
               </div>
 
               <div className="mb-6">
                 <h3 className="text-lg font-semibold mb-2">Website</h3>
-                <p className="text-green-100"><a href="#" className="hover:text-white transition-colors">www.dallasgrandbeach.com</a></p>
+                <p className="text-green-100"><a href="#" className="hover:text-white transition-colors">www.dallasgrandbeachhotel.com</a></p>
               </div>
 
               <div>

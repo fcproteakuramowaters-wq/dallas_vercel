@@ -23,7 +23,7 @@ export default function FacilitiesPage() {
       title: 'Event Center',
       description:
         'Host your most important celebrations in our magnificent event center. Spanning thousands of square feet with soaring ceilings and customizable layouts, our venue is perfect for weddings, corporate conferences, gala dinners, and private functions.',
-      images: ['/facilities/event-center/1.jpg', '/facilities/event-center/2.jpg'],
+      images: ['/facilities/event-center/event_hall.jpg','/facilities/event-center/eventhall.jpg','/facilities/event-center/1.jpg', '/facilities/event-center/2.jpg'],
       isImageLeft: false,
     },
     {
@@ -47,7 +47,28 @@ export default function FacilitiesPage() {
       title: 'Pool Bar',
       description:
         'Relax in paradise at our luxurious poolside bar. Lounge in comfortable cabanas while enjoying refreshing tropical drinks, light appetizers, and stunning water views.',
-      images: Array.from({ length: 18 }, (_, i) => `/facilities/pool-bar/${i + 1}.jpg`),
+      images: [
+        '/facilities/pool-bar/1.jpg',
+        '/facilities/pool-bar/2.jpg',
+        '/facilities/pool-bar/3.jpg',
+        '/facilities/pool-bar/4.jpg',
+        '/facilities/pool-bar/5.jpg',
+        '/facilities/pool-bar/6.jpg',
+        '/facilities/pool-bar/7.jpg',
+        '/facilities/pool-bar/8.jpg',
+        '/facilities/pool-bar/9.jpg',
+        '/facilities/pool-bar/10.jpg',
+        '/facilities/pool-bar/11.jpg',
+        '/facilities/pool-bar/12.jpg',
+        '/facilities/pool-bar/13.jpg',
+        '/facilities/pool-bar/14.jpg',
+        '/facilities/pool-bar/15.jpg',
+        '/facilities/pool-bar/16.jpg',
+        '/facilities/pool-bar/17.jpg',
+        '/facilities/pool-bar/18.jpg',
+        '/facilities/pool-bar/19.jpg',
+        '/facilities/pool-bar/poolside.jpg',
+      ],
       isImageLeft: true,
     },
     {

@@ -7,10 +7,10 @@ import RoomCard from "@/components/RoomCard";
 import RoomDetails from "@/components/RoomDetails";
 
 const roomsData = [
-  { id: 'deluxe', title: 'Deluxe Room', price: '₦25,000', image: '/rooms/9.jpg', color: 'blue', description: 'Experience comfort in our spacious deluxe room with premium amenities.', html: null },
-  { id: 'executive', title: 'Executive Deluxe', price: '₦35,000', image: '/rooms/8.jpg', color: 'amber', description: 'Elevated luxury with premium features and exclusive benefits.', html: null },
-  { id: 'super', title: 'Super Executive Deluxe', price: '₦45,000', image: '/rooms/6.jpg', color: 'purple', description: 'The pinnacle of luxury with exclusive amenities and services.', html: null },
-  { id: 'suite', title: 'Executive Suite', price: '₦60,000', image: '/rooms/5.jpg', color: 'red', description: 'The ultimate luxury experience with premium suites and services.', html: null },
+  { id: 'deluxe', title: 'Deluxe Room', price: '₦20,000', image: '/rooms/9.jpg', color: 'blue', description: 'Experience comfort in our spacious deluxe room with premium amenities.', html: null },
+  { id: 'executive', title: 'Executive Deluxe', price: '₦25,000', image: '/rooms/8.jpg', color: 'amber', description: 'Elevated luxury with premium features and exclusive benefits.', html: null },
+  { id: 'super', title: 'Super Executive Deluxe', price: '₦30,000', image: '/rooms/6.jpg', color: 'purple', description: 'The pinnacle of luxury with exclusive amenities and services.', html: null },
+  { id: 'suite', title: 'Executive Suite', price: '₦42,000', image: '/rooms/5.jpg', color: 'red', description: 'The ultimate luxury experience with premium suites and services.', html: null },
 ];
 
 const defaultHtml = `

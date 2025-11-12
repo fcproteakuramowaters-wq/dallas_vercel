@@ -16,7 +16,7 @@ export default function Home() {
       id: 'event-center',
       title: 'Event Center',
       description: 'Celebrate life\'s most important moments in our elegant and spacious event center — ideal for weddings, conferences, banquets, and private celebrations. Designed with modern facilities, premium décor, and flexible seating options, our venue ensures every occasion is seamless, stylish, and unforgettable.',
-      images: ['/facilities/event-center/1.jpg', '/facilities/event-center/2.jpg'],
+      images: ['/facilities/event-center/1.jpg', '/facilities/event-center/2.jpg', '/facilities/event-center/eventhall.jpg', '/facilities/event-center/event_hall.jpg'],
       isImageLeft: false,
     },
     {
@@ -56,6 +56,8 @@ export default function Home() {
         '/facilities/pool-bar/16.jpg',
         '/facilities/pool-bar/17.jpg',
         '/facilities/pool-bar/18.jpg',
+        '/facilities/pool-bar/19.jpg',
+        '/facilities/pool-bar/poolside.jpg',
       ],
       isImageLeft: true,
     },
