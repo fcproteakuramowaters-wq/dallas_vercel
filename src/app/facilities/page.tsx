@@ -84,7 +84,7 @@ export default function FacilitiesPage() {
       title: 'Wine Bar',
       description:
         'Indulge in refined elegance at our prestigious wine bar. Our curated selection of fine wines, premium spirits, and craft cocktails is expertly paired with gourmet appetizers and charcuterie.',
-      images: ['/facilities/wine-bar/1.jpg', '/facilities/wine-bar/2.jpg'],
+      images: ['/facilities/wine-bar/1.jpg', '/facilities/wine-bar/3.jpg'],
       isImageLeft: true,
     },
   ];
