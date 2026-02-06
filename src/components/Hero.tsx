@@ -12,7 +12,6 @@ export default function Hero() {
     '/iupdate/bed4.jpg',
     '/iupdate/bed9.jpg',
     '/iupdate/bed10.jpg',
-    '/iupdate/bed11.jpg',
     '/iupdate/bed3.jpg',
     '/iupdate/bed5.jpg',
     '/iupdate/bed1.jpg',
