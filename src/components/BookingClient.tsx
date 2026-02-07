@@ -104,7 +104,7 @@ export default function BookingClient() {
                 </span>
               </div>
 
-              <div className="w-full h-40 relative">
+              <div className={`w-full h-40 relative ${r.id === selectedRoomId ? 'ring-4 ring-green-500 rounded' : ''}`}>
                 <Image src={r.image} alt={r.title} fill className="object-cover" />
               </div>
               <div className="p-3">
