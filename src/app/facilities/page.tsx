@@ -20,7 +20,7 @@ export default function FacilitiesPage() {
     },
     {
       id: 'event-center',
-      title: 'Event Center',
+      title: 'Event Center & VIP Bar',
       description:
         'Host your most important celebrations in our magnificent event center. Spanning thousands of square feet with soaring ceilings and customizable layouts, our venue is perfect for weddings, corporate conferences, gala dinners, and private functions.',
       images: ['/facilities/event-center/event_hall.jpg','/facilities/event-center/eventhall.jpg','/facilities/event-center/1.jpg', '/facilities/event-center/2.jpg'],
