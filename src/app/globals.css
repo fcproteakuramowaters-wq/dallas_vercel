@@ -3,6 +3,12 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  /* Luxury Resort Color Palette */
+  --primary-gold: #d4af37;
+  --primary-dark: #1a2847;
+  --accent-blue: #1e5a96;
+  --accent-light: #f5f3f0;
+  --accent-warm: #b8956a;
 }
 
 @theme inline {

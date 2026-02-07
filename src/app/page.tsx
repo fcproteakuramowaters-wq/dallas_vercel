@@ -88,17 +88,21 @@ export default function Home() {
       <Hero />
       <main className="flex-grow">
         {/* Our Facilities Section */}
-        <div className="w-full py-16 bg-white">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Facilities</h2>
+        <div className="w-full py-20 bg-gradient-to-b from-white via-gray-50 to-white">
+          <div className="mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-900">Our Premium Facilities</h2>
+            <p className="text-center text-gray-600 text-lg max-w-2xl mx-auto">Experience world-class amenities designed for your comfort and enjoyment</p>
+          </div>
           <div className="mx-auto w-4/5">
             {facilities.map((facility) => (
-              <FacilitySlider
-                key={facility.id}
-                title={facility.title}
-                description={facility.description}
-                images={facility.images}
-                isImageLeft={facility.isImageLeft}
-              />
+              <div key={facility.id} className="mb-20 last:mb-0">
+                <FacilitySlider
+                  title={facility.title}
+                  description={facility.description}
+                  images={facility.images}
+                  isImageLeft={facility.isImageLeft}
+                />
+              </div>
             ))}
           </div>
         </div>
