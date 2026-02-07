@@ -87,14 +87,39 @@ export default function BookingClient() {
       {/* Room Selection */}
       <div className="mb-8">
         <h2 className="text-xl font-semibold mb-4">Choose a room</h2>
+
+        {/* Filters */}
+        <div className="flex flex-col sm:flex-row gap-3 mb-4 items-center">
+          <div className="flex items-center gap-2">
+            <label className="text-sm font-medium">Bed Type:</label>
+            <select value={''} onChange={(e) => { /* placeholder: client-side filter below */ }} className="border px-2 py-1 rounded" id="filter-bed">
+              <option value="">All</option>
+              <option value="Queen">Queen</option>
+              <option value="King">King</option>
+              <option value="Twin">Twin</option>
+            </select>
+          </div>
+          <div className="flex items-center gap-2">
+            <label className="text-sm font-medium">Max Price:</label>
+            <input id="filter-price" type="number" placeholder="No limit" className="border px-2 py-1 rounded w-36" />
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {allRooms.map((r) => (
             <button
               key={r.id}
               onClick={() => setSelectedRoomId(r.id)}
-              className={`text-left border rounded-lg overflow-hidden hover:shadow-lg transition-all p-0 ${r.id === selectedRoomId ? 'ring-2 ring-primary/60' : ''}`}
+              className={`text-left border rounded-lg overflow-hidden hover:shadow-lg transition-all p-0 relative ${r.id === selectedRoomId ? 'ring-2 ring-primary/60' : ''}`}
               aria-pressed={r.id === selectedRoomId}
             >
+              {/* availability badge */}
+              <div className="absolute top-3 left-3 z-10">
+                <span className={`px-2 py-1 text-xs rounded-full font-semibold ${r.availability === 'available' ? 'bg-green-600 text-white' : r.availability === 'limited' ? 'bg-yellow-500 text-white' : 'bg-gray-400 text-white'}`}>
+                  {r.availability === 'available' ? 'Available' : r.availability === 'limited' ? 'Limited' : 'Sold Out'}
+                </span>
+              </div>
+
               <div className="w-full h-40 relative">
                 <Image src={r.image} alt={r.title} fill className="object-cover" />
               </div>
@@ -102,6 +127,11 @@ export default function BookingClient() {
                 <div className="flex items-center justify-between">
                   <div className="font-semibold">{r.title}</div>
                   <div className="text-sm text-gray-600">₦{r.rate.toLocaleString()}</div>
+                </div>
+                <div className="flex items-center gap-3 mt-2 text-sm text-gray-500">
+                  <div>Bed: <strong>{r.bedType ?? '—'}</strong></div>
+                  <div>•</div>
+                  <div>Capacity: <strong>{r.capacity ?? '-'}</strong></div>
                 </div>
                 <div className="text-sm text-gray-500 mt-2">{r.description}</div>
               </div>
