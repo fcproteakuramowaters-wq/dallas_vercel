@@ -69,7 +69,6 @@ export default function BookingClient() {
       }
 
       setMessage('✓ Booking confirmed! Check your email for details.');
-      // Redirect to home page after 2 seconds
       setTimeout(() => {
         router.push('/');
       }, 2000);
@@ -88,30 +87,15 @@ export default function BookingClient() {
       <div className="mb-8">
         <h2 className="text-xl font-semibold mb-4">Choose a room</h2>
 
-        {/* Filters */}
-        <div className="flex flex-col sm:flex-row gap-3 mb-4 items-center">
-          <div className="flex items-center gap-2">
-            <label className="text-sm font-medium">Bed Type:</label>
-            <select value={''} onChange={(e) => { /* placeholder: client-side filter below */ }} className="border px-2 py-1 rounded" id="filter-bed">
-              <option value="">All</option>
-              <option value="Queen">Queen</option>
-              <option value="King">King</option>
-              <option value="Twin">Twin</option>
-            </select>
-          </div>
-          <div className="flex items-center gap-2">
-            <label className="text-sm font-medium">Max Price:</label>
-            <input id="filter-price" type="number" placeholder="No limit" className="border px-2 py-1 rounded w-36" />
-          </div>
-        </div>
-
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {allRooms.map((r) => (
             <button
               key={r.id}
-              onClick={() => setSelectedRoomId(r.id)}
-              className={`text-left border rounded-lg overflow-hidden hover:shadow-lg transition-all p-0 relative ${r.id === selectedRoomId ? 'ring-2 ring-primary/60' : ''}`}
+              onClick={() => r.availability !== 'sold-out' && setSelectedRoomId(r.id)}
+              className={`text-left border rounded-lg overflow-hidden hover:shadow-lg transition-all p-0 relative ${r.id === selectedRoomId ? 'ring-2 ring-yellow-500' : ''} ${r.availability === 'sold-out' ? 'opacity-60 cursor-not-allowed' : ''}`}
               aria-pressed={r.id === selectedRoomId}
+              aria-disabled={r.availability === 'sold-out'}
+              disabled={r.availability === 'sold-out'}
             >
               {/* availability badge */}
               <div className="absolute top-3 left-3 z-10">
