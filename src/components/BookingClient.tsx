@@ -3,7 +3,7 @@
 import { useSearchParams, useRouter } from "next/navigation";
 import { useState, useMemo } from "react";
 import Image from 'next/image';
-import { getRoomById } from '@/lib/rooms';
+import { getRoomById, rooms as allRooms } from '@/lib/rooms';
 
 function daysBetween(a?: string, b?: string) {
   if (!a || !b) return 0;
@@ -17,7 +17,9 @@ export default function BookingClient() {
   const params = useSearchParams();
   const router = useRouter();
   const roomId = params?.get('room') || undefined;
-  const room = useMemo(() => getRoomById(roomId), [roomId]);
+  const initialRoom = useMemo(() => getRoomById(roomId), [roomId]);
+  const [selectedRoomId, setSelectedRoomId] = useState<string>(initialRoom.id);
+  const room = useMemo(() => getRoomById(selectedRoomId), [selectedRoomId]);
 
   const [fullName, setFullName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
@@ -81,6 +83,32 @@ export default function BookingClient() {
   return (
     <div className="max-w-4xl mx-auto px-6 py-12">
       <h1 className="text-3xl font-bold mb-6">Book {room.title}</h1>
+
+      {/* Room Selection */}
+      <div className="mb-8">
+        <h2 className="text-xl font-semibold mb-4">Choose a room</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {allRooms.map((r) => (
+            <button
+              key={r.id}
+              onClick={() => setSelectedRoomId(r.id)}
+              className={`text-left border rounded-lg overflow-hidden hover:shadow-lg transition-all p-0 ${r.id === selectedRoomId ? 'ring-2 ring-primary/60' : ''}`}
+              aria-pressed={r.id === selectedRoomId}
+            >
+              <div className="w-full h-40 relative">
+                <Image src={r.image} alt={r.title} fill className="object-cover" />
+              </div>
+              <div className="p-3">
+                <div className="flex items-center justify-between">
+                  <div className="font-semibold">{r.title}</div>
+                  <div className="text-sm text-gray-600">₦{r.rate.toLocaleString()}</div>
+                </div>
+                <div className="text-sm text-gray-500 mt-2">{r.description}</div>
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
 
       <div className="bg-white rounded-lg shadow p-6">
         {/* Guest Info Fields */}
