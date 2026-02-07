@@ -110,8 +110,9 @@ export default function FacilitySlider({
         <Image
           src={images[currentImageIndex]}
           alt={title}
-          width={500}
-          height={400}
+          width={1200}
+          height={800}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 60vw, 40vw"
           className="w-full h-auto object-cover"
           onLoadingComplete={() => setIsImageLoading(false)}
         />
@@ -176,8 +177,9 @@ export default function FacilitySlider({
               <Image
                 src={images[lightboxIndex]}
                 alt={`${title} ${lightboxIndex + 1}`}
-                width={800}
-                height={600}
+                width={1600}
+                height={1000}
+                sizes="100vw"
                 className="w-full h-auto"
               />
             </div>

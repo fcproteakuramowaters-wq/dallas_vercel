@@ -15,7 +15,7 @@ export default function Home() {
     {
       id: 'event-center',
       title: 'Event Center & VIP Bar',
-      description: 'Celebrate life\'s most important moments in our elegant and spacious event center — ideal for weddings, conferences, banquets, and private celebrations. Our state-of-the-art venue features advanced audiovisual systems, customizable lighting, and a sophisticated atmosphere perfect for corporate events, gala dinners, and intimate ceremonies. With dedicated event planning services, premium catering options, and our exclusive VIP bar offering an impressive selection of fine wines, champagne, and craft cocktails, we ensure every detail is meticulously handled. Our flexible layouts accommodate groups from 50 to 500 guests, and our professional staff provides seamless service throughout your event. From pre-event coordination to post-celebration cleanup, we\'re committed to making your occasion truly unforgettable.',
+      description: 'Celebrate special moments in our elegant Event Center and VIP Bar. Ideal for weddings, conferences, and private events, with modern AV, flexible layouts (50–500 guests), professional planning, and a VIP bar serving fine wines and crafted cocktails.',
       images: ['/facilities/event-center/1.jpg', '/facilities/event-center/2.jpg', '/facilities/event-center/eventhall.jpg', '/facilities/event-center/event_hall.jpg'],
       isImageLeft: false,
     },

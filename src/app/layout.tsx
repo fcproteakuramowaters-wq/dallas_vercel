@@ -34,6 +34,22 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/logo.png" type="image/png" />
+        {/* JSON-LD structured data for SEO */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Hotel",
+          "name": "Dallas Grand Beach Hotel",
+          "url": "https://dallasgrandbeachhotel.example",
+          "logo": "https://dallasgrandbeachhotel.example/logo.png",
+          "telephone": "+2349074554875",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1 & 5 court road, opposite ewgla secretariat",
+            "addressLocality": "Oghara",
+            "addressRegion": "Delta",
+            "addressCountry": "NG"
+          }
+        }) }} />
         {/* Google Analytics */}
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-5VCFDDPX38" />
         <Script id="google-analytics" strategy="afterInteractive">
